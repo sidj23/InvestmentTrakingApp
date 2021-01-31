@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sid.investmenttrakingapp.ui.goals.addinvest.AddInvestmentViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_form_investment"
+            android:elevation="4dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@{viewModel.selectionHint}"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@={viewModel.investmentGroup}" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="@{viewModel.radioButtonHint}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="@{viewModel.fixedHint}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="Fixed" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="@{viewModel.variableHint}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="Variable" />
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@{viewModel.dateHint}"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:onClick="@{()->viewModel.onPurchaseDateClick()}"
+                android:text="@={viewModel.purchaseDate}"
+                android:textIsSelectable="false" />
+
+            <EditText
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@{viewModel.unitHint}"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:text="@={viewModel.purchaseUnit}" />
+
+            <EditText
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@{viewModel.priceHint}"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:text="@={viewModel.purchasePrice}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_tab_selected"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:text="@{viewModel.addMoreHint}"
+                tools:text="Add More" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

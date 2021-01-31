@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="viewModel"
+            type="com.sid.investmenttrakingapp.ui.goals.GoalsViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_margin="12dp"
+            android:baselineAligned="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:background="@{viewModel.isTab1Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
+                android:onClick="@{()->viewModel.onTabClicked(1)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@{viewModel.tab1Text}"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:background="@{viewModel.isTab2Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
+                android:onClick="@{()->viewModel.onTabClicked(2)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@{viewModel.tab2Text}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:background="@{viewModel.isTab3Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
+                android:onClick="@{()->viewModel.onTabClicked(3)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@{viewModel.tab3Text}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:background="@{viewModel.isTab4Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
+                android:onClick="@{()->viewModel.onTabClicked(4)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@{viewModel.tab4Text}" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/fg_goals_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabViewPager="@{viewModel.fragmentObservableList}" />
+
+    </LinearLayout>
+
+</layout>
