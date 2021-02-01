@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sid.investmenttrakingapp.R;
 import com.sid.investmenttrakingapp.databinding.FragmentAddInvestmentBinding;
+import com.sid.investmenttrakingapp.util.AppUtil;
 import com.sid.investmenttrakingapp.util.PreferenceHelper;
 
 import java.text.SimpleDateFormat;
@@ -144,6 +145,7 @@ public class AddInvestmentFragment extends Fragment implements AddInvestmentNavi
 
     @Override
     public void showErrorMessage(String message) {
+        AppUtil.hideSoftKeyboard(getActivity());
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
 

@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
 
 import com.sid.investmenttrakingapp.R;
 import com.sid.investmenttrakingapp.databinding.FragmentGoalsBinding;
@@ -54,6 +55,22 @@ public class GoalsFragment extends Fragment implements GoalsNavigator, AddInvest
         tabViewPagerAdapter = new TabViewPagerAdapter(getFragmentManager(), 0);
         goalsBinding.fgGoalsVp.setAdapter(tabViewPagerAdapter);
         goalsBinding.fgGoalsVp.setOffscreenPageLimit(4);
+
+        goalsBinding.fgGoalsVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                goalsViewModel.onTabClicked(position + 1, true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override

@@ -44,7 +44,7 @@ public class GoalsViewModel extends ViewModel {
         isTab3Selected = new ObservableBoolean(false);
         isTab4Selected = new ObservableBoolean(false);
 
-        onTabClicked(1);
+        onTabClicked(1, false);
         setFragmentList();
     }
 
@@ -59,7 +59,7 @@ public class GoalsViewModel extends ViewModel {
         fragmentObservableList.addAll(fragmentList);
     }
 
-    public void onTabClicked(int selected) {
+    public void onTabClicked(int selected, boolean isFromScroll) {
 
         if (selected == 1) {
             isTab1Selected.set(true);
@@ -70,7 +70,7 @@ public class GoalsViewModel extends ViewModel {
         } else if (selected == 4) {
             isTab4Selected.set(true);
         }
-        if (navigator != null)
+        if (navigator != null && !isFromScroll)
             navigator.onTabClicked(selected);
         refreshTabSelection(selected);
     }

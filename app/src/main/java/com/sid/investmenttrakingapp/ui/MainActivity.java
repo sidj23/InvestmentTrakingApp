@@ -1,7 +1,10 @@
 package com.sid.investmenttrakingapp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +26,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
 
         navigation.setSelectedItemId(R.id.nav_goals);
+
+        RelativeLayout chatLayout = findViewById(R.id.am_chat_rl);
+        chatLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchChatActivity();
+            }
+        });
+    }
+
+    private void launchChatActivity() {
+        startActivity(new Intent(this, ChatActivity.class));
     }
 
     @Override

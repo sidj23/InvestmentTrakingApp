@@ -23,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:orientation="horizontal"
             android:weightSum="4"
             android:layout_margin="12dp"
@@ -36,7 +36,7 @@
                 android:layout_margin="4dp"
                 android:padding="4dp"
                 android:background="@{viewModel.isTab1Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
-                android:onClick="@{()->viewModel.onTabClicked(1)}">
+                android:onClick="@{()->viewModel.onTabClicked(1,false)}">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -45,7 +45,18 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:text="@{viewModel.tab1Text}"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:ellipsize="end" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_add_investment" />
 
             </RelativeLayout>
 
@@ -56,13 +67,25 @@
                 android:layout_margin="4dp"
                 android:padding="4dp"
                 android:background="@{viewModel.isTab2Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
-                android:onClick="@{()->viewModel.onTabClicked(2)}">
+                android:onClick="@{()->viewModel.onTabClicked(2,false)}">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="@{viewModel.tab2Text}" />
+                    android:text="@{viewModel.tab2Text}"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:ellipsize="end" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_personal" />
 
             </RelativeLayout>
 
@@ -73,13 +96,25 @@
                 android:layout_margin="4dp"
                 android:padding="4dp"
                 android:background="@{viewModel.isTab3Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
-                android:onClick="@{()->viewModel.onTabClicked(3)}">
+                android:onClick="@{()->viewModel.onTabClicked(3,false)}">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="@{viewModel.tab3Text}" />
+                    android:text="@{viewModel.tab3Text}"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:ellipsize="end" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_wife" />
 
             </RelativeLayout>
 
@@ -90,13 +125,25 @@
                 android:layout_margin="4dp"
                 android:padding="4dp"
                 android:background="@{viewModel.isTab4Selected ? @drawable/bg_tab_selected : @drawable/bg_tab_not_selected}"
-                android:onClick="@{()->viewModel.onTabClicked(4)}">
+                android:onClick="@{()->viewModel.onTabClicked(4,false)}">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="@{viewModel.tab4Text}" />
+                    android:text="@{viewModel.tab4Text}"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:ellipsize="end" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_kids" />
 
             </RelativeLayout>
 
