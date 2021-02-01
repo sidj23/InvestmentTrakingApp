@@ -70,7 +70,7 @@ public class GoalsViewModel extends ViewModel {
         } else if (selected == 4) {
             isTab4Selected.set(true);
         }
-        if(navigator!=null)
+        if (navigator != null)
             navigator.onTabClicked(selected);
         refreshTabSelection(selected);
     }
