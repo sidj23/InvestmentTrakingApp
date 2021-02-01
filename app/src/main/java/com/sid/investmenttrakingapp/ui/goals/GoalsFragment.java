@@ -87,16 +87,19 @@ public class GoalsFragment extends Fragment implements GoalsNavigator, AddInvest
                 AddInvestmentFragment fragment = (AddInvestmentFragment) tabViewPagerAdapter.getItem(1);
                 fragment.refreshInvestmentData();
             }
+            goalsBinding.fgGoalsVp.setCurrentItem(1, true);
         } else if (tabName.equalsIgnoreCase("For Wife")) {
             if (tabViewPagerAdapter.getItem(2) instanceof AddInvestmentFragment) {
                 AddInvestmentFragment fragment = (AddInvestmentFragment) tabViewPagerAdapter.getItem(2);
                 fragment.refreshInvestmentData();
             }
+            goalsBinding.fgGoalsVp.setCurrentItem(2, true);
         } else if (tabName.equalsIgnoreCase("For Kids")) {
             if (tabViewPagerAdapter.getItem(3) instanceof AddInvestmentFragment) {
                 AddInvestmentFragment fragment = (AddInvestmentFragment) tabViewPagerAdapter.getItem(3);
                 fragment.refreshInvestmentData();
             }
+            goalsBinding.fgGoalsVp.setCurrentItem(3, true);
         }
     }
 }
